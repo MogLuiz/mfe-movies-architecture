@@ -3,13 +3,21 @@ import { AppShell } from "ui";
 
 function App() {
   return (
-    <div>
-      <AppShell
-        title="Movies"
-        colorScheme="dark"
-        routes={[{ path: "/", element: () => <div>home</div> }]}
-      />
-    </div>
+    <AppShell
+      title="Movies"
+      colorScheme="dark"
+      routes={[{ path: "/", element: () => <div>home</div> }]}
+      navLinks={[
+        {
+          label: "Home",
+          path: "/",
+        },
+        {
+          label: "Playlist",
+          path: "/playlist",
+        },
+      ]}
+    />
   );
 }
 

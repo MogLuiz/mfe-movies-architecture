@@ -3,7 +3,4 @@ export type RouteType = {
   path: string;
 };
 
-export type NavLink = {
-  label: string;
-  path: string;
-};
+

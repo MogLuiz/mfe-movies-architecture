@@ -1,11 +1,14 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import {
-  AppShell as MantineAppShel,
+  AppShell as MantineAppShell,
   Header,
   Title,
   MantineProvider,
+  Navbar,
 } from "@mantine/core";
-import { NavLink, RouteType } from "./types";
+import { MainLink } from "../MainLink";
+import { NavLink } from "../shared/types";
+import { RouteType } from "./types";
 
 type AppShellProps = {
   title: string;
@@ -18,11 +21,12 @@ export const AppShell: React.FunctionComponent<AppShellProps> = ({
   title,
   colorScheme,
   routes,
-  navLinks
+  navLinks,
 }) => (
   <BrowserRouter>
     <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme }}>
-      <MantineAppShel
+      <MantineAppShell
+        padding="md"
         header={
           <Header
             height={60}
@@ -40,6 +44,13 @@ export const AppShell: React.FunctionComponent<AppShellProps> = ({
             <Title>{title}</Title>
           </Header>
         }
+        navbar={
+          <Navbar width={{ base: 300 }} height={500} p="xs">
+            {navLinks.map((link) => (
+              <MainLink {...link} key={link.path} />
+            ))}
+          </Navbar>
+        }
       >
         <Routes>
           {routes.map((route) => (
@@ -51,7 +62,7 @@ export const AppShell: React.FunctionComponent<AppShellProps> = ({
           ))}
         </Routes>
         <Outlet />
-      </MantineAppShel>
+      </MantineAppShell>
     </MantineProvider>
   </BrowserRouter>
 );
