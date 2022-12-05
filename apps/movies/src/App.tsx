@@ -4,7 +4,11 @@ import { AppShell } from "ui";
 function App() {
   return (
     <div>
-      <AppShell title="Movies" colorScheme="dark"/>
+      <AppShell
+        title="Movies"
+        colorScheme="dark"
+        routes={[{ path: "/", element: () => <div>home</div> }]}
+      />
     </div>
   );
 }
