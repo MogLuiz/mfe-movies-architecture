@@ -5,17 +5,21 @@ import {
   Title,
   MantineProvider,
 } from "@mantine/core";
+import { NavLink, RouteType } from "./types";
 
-export type Route = {
-  element: React.FunctionComponent;
-  path: string;
-};
-
-export const AppShell: React.FunctionComponent<{
+type AppShellProps = {
   title: string;
   colorScheme?: "light" | "dark";
-  routes: Route[];
-}> = ({ title, colorScheme, routes }) => (
+  routes: RouteType[];
+  navLinks: NavLink[];
+};
+
+export const AppShell: React.FunctionComponent<AppShellProps> = ({
+  title,
+  colorScheme,
+  routes,
+  navLinks
+}) => (
   <BrowserRouter>
     <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme }}>
       <MantineAppShel
