@@ -6,7 +6,10 @@ function App() {
     <AppShell
       title="Movies"
       colorScheme="dark"
-      routes={[{ path: "/", element: () => <div>home</div> }]}
+      routes={[
+        { path: "/", element: () => <div>home</div> },
+        { path: "/playlist", element: () => <div>playlist</div> },
+      ]}
       navLinks={[
         {
           label: "Home",
