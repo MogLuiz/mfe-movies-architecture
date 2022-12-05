@@ -1,6 +1,2 @@
-import * as React from "react";
-export declare const AppShell: React.FunctionComponent<{
-    title: string;
-    colorScheme?: "light" | "dark";
-}>;
+export * from "./src/components/AppShell";
 //# sourceMappingURL=index.d.ts.map
