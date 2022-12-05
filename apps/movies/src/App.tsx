@@ -1,10 +1,10 @@
 import React from "react";
-import { Button } from "ui";
+import { AppShell } from "ui";
 
 function App() {
   return (
     <div>
-      <Button />
+      <AppShell title="Movies" colorScheme="dark"/>
     </div>
   );
 }
